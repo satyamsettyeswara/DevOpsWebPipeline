@@ -10,3 +10,5 @@ To build docker image
 To run container
     docker run -v $(pwd):/app:ro -v /app/node_modules --env PORT=3000 -p 3000:3000 -d --name node-contianer node-image
 check in localhost:3000 whether application is running or not
+To exec into the container
+    docker exec -it node-container bash
