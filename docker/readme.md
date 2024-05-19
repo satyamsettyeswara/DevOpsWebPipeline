@@ -12,3 +12,15 @@ To run container
 check in localhost:3000 whether application is running or not
 To exec into the container
     docker exec -it node-container bash
+To use docker-compose so everytime we dont have to use the long command to build the image or to run the contianer
+    created docker-compose file for easy building and running of container
+    created docker-compose.dev.yaml file for development environment
+    created docker-compose.prod.yaml file for productin environment
+    command to run the docker-compose
+        docker-compose up -d
+        docker-compose up -d --build(will build new image if we change something in the dockerfile)
+    command to run the docker-compose with  dev environment
+        docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml up -d
+    command to remove the container
+        docker-compose down -v
+        docker-compsoe -f docker-compose.yaml -f docker-compose.dev.yaml down -v
