@@ -24,3 +24,7 @@ To use docker-compose so everytime we dont have to use the long command to build
     command to remove the container
         docker-compose down -v
         docker-compsoe -f docker-compose.yaml -f docker-compose.dev.yaml down -v
+To use mongod db in nodes app
+ add new service mongo to dockerfile with volumes and connect using docker inspect to get ip address
+rebuild the image to effect the changes
+
