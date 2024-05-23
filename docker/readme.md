@@ -25,6 +25,16 @@ To use docker-compose so everytime we dont have to use the long command to build
         docker-compose down -v
         docker-compsoe -f docker-compose.yaml -f docker-compose.dev.yaml down -v
 To use mongod db in nodes app
- add new service mongo to dockerfile with volumes and connect using docker inspect to get ip address
+ add new service mongo to dockerfile with volumes and connect using docker inspect to get ip address and add the ip address to the nodeapp (which is tedious process which we will resolve in below using docker networks
+ as our node app will create a seperate network for our application we can directly use the service(container) in that network using the name of the container so here we can just update the ip address with the name of the container (service) that we used to create the mongo db which is mongo
+
+    we can ping mongo inside the mongo container which return the ping which means mongo name itself we can use as ipaddress
+ )
 rebuild the image to effect the changes
+To see the all the networks in docker
+    docker network ls
+To inpsect a specific network 
+    docker network inspect <network name> (this will show all the services and their ip add and mac add e.t.c)
+
+
 
