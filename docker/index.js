@@ -16,8 +16,9 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
- app.get("/", (req,res) => {
+ app.get("/api/v1", (req,res) => {
     res.send("<h1> hello rao garu! </h1>");
+    console.log("nginx is working");
  });
 
  const port = process.env.PORT ||3000;

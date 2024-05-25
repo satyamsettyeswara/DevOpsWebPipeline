@@ -35,6 +35,9 @@ To see the all the networks in docker
     docker network ls
 To inpsect a specific network 
     docker network inspect <network name> (this will show all the services and their ip add and mac add e.t.c)
+To use nginx 
+    this will be used as an load balancer in our node js application by deploying two node containers
+    by creating config/config.js file and adding then nginx and updating the compose files
 
 
 
