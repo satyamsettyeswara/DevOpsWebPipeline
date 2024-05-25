@@ -38,6 +38,8 @@ To inpsect a specific network
 To use nginx 
     this will be used as an load balancer in our node js application by deploying two node containers
     by creating config/config.js file and adding then nginx and updating the compose files
-
+How can we deploy multiple conatiners of same image
+    docker-compsoe -f docker-compose.yaml -f docker-compose.dev.yaml up -d --scale node-app=2 (this will deploy 2 containers of node-app)
+    
 
 
