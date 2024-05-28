@@ -40,6 +40,11 @@ To use nginx
     by creating config/config.js file and adding then nginx and updating the compose files
 How can we deploy multiple conatiners of same image
     docker-compsoe -f docker-compose.yaml -f docker-compose.dev.yaml up -d --scale node-app=2 (this will deploy 2 containers of node-app)
-    
+How to push docker image to docker hub
+    docker login in both console and website
+        - first create the repository in docker hub 
+        - use the repostiory and add to the image tag so it can be uploaded (docker image tag docker-node-app <docker username>/<image name>)
+        - next docker push command to upload in to dockerhun (docker push <docker username>/<image name>)
+        - another way to push docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml push node-app
 
 
