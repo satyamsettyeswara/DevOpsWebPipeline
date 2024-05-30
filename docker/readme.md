@@ -46,5 +46,17 @@ How to push docker image to docker hub
         - use the repostiory and add to the image tag so it can be uploaded (docker image tag docker-node-app <docker username>/<image name>)
         - next docker push command to upload in to dockerhun (docker push <docker username>/<image name>)
         - another way to push docker-compose -f docker-compose.yaml -f docker-compose.dev.yaml push node-app
+Isn't it good to know automatically detect if there is a new image in docker hub and production server grabs that new image and rebuilds it? if there is a new image in docker hub it will pull and deploy in production server
+    docker watchtower                   
+    command to run: docker run -d --name watchtower -e WATCHTOWER_TRACE=true -e WATCHTOWER_POLL_INTERVAL=50 -v /var/run/docker.sock:/var/run/docker.sock containerrr/watchtower node-app
+    containerrr/watchtower is image of the watchtower
+    node-app is containers that we want to watch
 
+Rolling updates (zero downtime)
+    docker swarm - container orchestrator that is built-in docker
+        docker swarm init
+        docker swarm init advertise-addr <ip addr>
+    Updated docker-compose.prod.yaml file with docker swarm related things
+    we can also deply using docker stack
+        docker stack deploy -c docker-compose.yaml -c docker-compose.prod.dev.yaml mystack
 
