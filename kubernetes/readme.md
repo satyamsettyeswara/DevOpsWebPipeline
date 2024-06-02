@@ -11,3 +11,12 @@ sample service connecting to deployment
 Now lets try a small application setup
     create mongodb as deployement (better option is to create it as a stateful set since it is a database) and secret (for username and password)
     check whether deployment and secret are connected by exec into the pods
+    create service which we will use this service to connecto other deployment (instead of creating seperate yaml file we are going to include in the same deployment file)
+Next we will deploy mongoexpress with mongodb
+    Create deployment for mongo express with env and all
+    Create the secret if needed and configmap for the mongodb url to pass as an env variable in deployment
+Create the mongoexpres service to access throught website/local
+    start mongoexpress service with minikube so we can access in the webbrowser
+    ```
+    minikube service mongo-express-service
+    ```
