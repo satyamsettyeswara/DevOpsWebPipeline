@@ -20,3 +20,5 @@ Create the mongoexpres service to access throught website/local
     ```
     minikube service mongo-express-service
     ```
+Creating namespace is for better access of resources and k8s componenets
+    - we can create it by kubectl apply -f mongo-db-deploy.yaml --namespace=my-namespace
