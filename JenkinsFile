@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'master', url: 'https://github.com/jenkins-docs/simple-pipeline.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+    }
+}
