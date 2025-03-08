@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'master', url: 'https://github.com/jenkins-docs/simple-pipeline.git'
+                git branch: 'master', url: 'https://github.com/satyamsettyeswara/DevOpsWebPipeline.git'
             }
         }
         stage('Build') {
